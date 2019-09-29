@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+  <body>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+     <h1>Twitter Sentiment Analysis & Scraper </h1> 
+	<form action="/analyse" method="POST">
+	
+	<input class="col-md-3 mb-3" type="text" placeholder="Data Science" name="query" id="query" required>
+	<input class="col-md-3 mb-3" type="text" placeholder="No of Tweets" name="num" id="num" required>
+	<input type="submit" name="submit" value="Analyse">
+	
+	</form><br>
+<b>
+<p style="color: green;">Polarity - {{ polarity }}</p><br>
+<p style="color: darkgreen;"> {{ positive }}% people thought it was positive</p>
+<p style="color: red;"> {{ negative }}% people thought it was negative</p>
+<p style="color: blue;"> {{ neutral }}% people thought it was neutral</p></b><br>
+
+<h4>Recent Tweet - {{ tweets }}</h4>
+
+<br><br>
+<p>{{ summary }}</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted"><a href="https://www.github.com/iamsushanth">Github</a></span>
+      </div>
+    </footer>
+  </body>
+
+
+
+
+
+
+
+{% endblock %}
